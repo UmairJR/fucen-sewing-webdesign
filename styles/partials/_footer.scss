@@ -1,0 +1,51 @@
+.footer {
+    
+    &--tabs {
+        padding: 20px 10px;
+        border-radius: 50px;
+
+        @include maxOrientation(1024, portrait) {
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 50px;
+
+            @include maxOrientation(1024, portrait) {
+                padding: 10px;
+            }
+        }
+
+        &-container {
+            max-width: 550px;
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+
+    &--container {
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 2px solid $black;
+
+        @include maxOrientation(1024, portrait) {
+            flex-direction: column;
+        }
+    }
+
+    &--list {
+        a {
+            display: inline-block;
+        }
+        &-social {
+            li {
+                width: 20px;
+                height: 20px;
+                a {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

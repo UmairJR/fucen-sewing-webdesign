@@ -1,0 +1,206 @@
+.card {
+    &--product {
+        border: 1px solid rgba($black, 0.1);
+        padding: 30px;
+        border-radius: 10px;
+
+        @include maxOrientation(1024, portrait) {
+            box-shadow: 0 0 20px rgba($black, 0.12);
+            padding: 15px;
+        }
+
+        .detail-btn {
+            opacity: 0;
+            pointer-events: none;
+            height: auto;
+            transition: all 0.4s ease;
+
+            @include maxOrientation(1024, portrait) {
+                opacity: 1;
+            }
+        }
+
+        .image--container {
+            position: relative;
+
+            img {
+                transition: all 0.4s ease;
+            }
+
+            button {
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                left: 50%;
+                height: auto;
+                white-space: nowrap;
+                opacity: 0;
+                transition: all 0.4s ease;
+            }
+        }
+
+        .swatches {
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        &-storage {
+            border: 1px solid $secondary;
+            padding: 15px 20px;
+            border-radius: 10px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+
+            span {
+                border-right: 1px solid $secondary;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:last-child {
+                    border-right: none;
+                    padding-right: 0;
+                }
+            }
+        }
+
+        &:hover {
+            box-shadow: 0 0 20px rgba($black, 0.12);
+
+            .image--container {
+
+                img {
+                    transform: scale(1.2);
+
+                    @include maxOrientation(1024, portrait) {
+                        transform: none;
+                    }
+                }
+
+                button {
+                    opacity: 1;
+                }
+            }
+
+            .detail-btn {
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+
+        &-modal {
+            width: 85% !important;
+
+            @include maxOrientation(1024, portrait) {
+                width: 100% !important;
+            }
+
+            .modal {
+                &-content {
+                    overflow: auto;
+                    padding: 30px 20px;
+
+                    @include max(640) {
+                        padding: 30px 0 50px;
+                    }
+                }
+
+                &--card {
+                    @include maxOrientation(1024, portrait) {
+                        flex-direction: column;
+                        padding: 0 20px 0px;
+                    }
+
+                    &-slider {
+                        width: calc(100% / 2);
+                        margin-right: 100px;
+                        position: relative;
+
+                        @include maxOrientation(1024, portrait) {
+                            width: 100%;
+                            margin-right: 0;
+                        }
+
+                        .slick {
+                            &-prev {
+                                left: 10px;
+                            }
+
+                            &-next {
+                                right: 10px;
+                            }
+
+                            &-prev, &-next {
+                                z-index: 1;
+                            }
+
+                            &-dots {
+                                bottom: -20px;
+                            }
+                        }
+                    }
+
+                    &-certificate {
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        i {
+                            display: block;
+                            &::before {
+                                color: $black;
+                            }
+                        }
+
+                    }
+
+                    &-info {
+                        @include maxOrientation(1024, portrait) {
+                            margin-top: 60px;
+                        }
+
+                        .swatches {
+                            margin-right: 40px;
+                            @include maxOrientation(1024, portrait) {
+                                margin-right: 0;
+                                margin-bottom: 10px;
+                            }
+
+                        }
+
+                        .card--product-storage {
+                            margin-left: 0;
+                            margin-right: 0;
+                        }
+
+                        .info {
+                            flex: 1;
+
+                            &--list {
+                                border-top: 1px solid rgba($black, 0.1);
+
+                                li {
+                                    display: flex;
+                                    margin-bottom: 50px;
+
+                                    @include maxOrientation(1024, portrait) {
+                                        margin-bottom: 20px;
+                                    }
+                                }
+
+                            }
+
+                            &--icon {
+                                width: 35px;
+                                height: 35px;
+                                margin-right: 30px;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

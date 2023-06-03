@@ -1,0 +1,62 @@
+.banner {
+    position: relative;
+}
+
+.banner--content-image-desktop {
+    width: 100%;
+    filter: blur(1px) brightness(0.30);
+}
+
+.banner--content-image-mobile {
+    display: none;
+}
+
+.bannertxt-text1 {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    
+    font-size: 2.5em;
+    display: block;
+}
+
+.bannertxt-text2 {
+    // color: rgb(34, 213, 180);
+    color: #b04040;
+    font-weight: 400;
+    font-family: "Open Sans";
+}
+
+.exbtn {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0);
+    color: white;
+    box-shadow: inset 0 0 0 3px #5a5a5ab9;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.exbtn:hover {
+    background: rgba(58, 58, 58, 0.596);
+    color: #b04040;
+    box-shadow: inset 0 0 0 3px #b04040;
+}
